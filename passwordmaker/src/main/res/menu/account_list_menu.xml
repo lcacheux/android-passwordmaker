@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 <!-- menu_item_view -->
 
     <item android:id="@+id/menu_item_view"
           android:icon="@android:drawable/ic_menu_view"
-          android:showAsAction="ifRoom|withText"
+          app:showAsAction="ifRoom|withText"
           android:title="@string/ViewAccount"
           android:titleCondensed="@string/ViewAccountShort" />
     <item android:id="@+id/menu_item_select"
           android:icon="@android:drawable/ic_input_get"
-          android:showAsAction="ifRoom|withText"
+          app:showAsAction="ifRoom|withText"
           android:title="@string/UseAccount"
           android:titleCondensed="@string/UseAccount" />
     <item android:id="@+id/menu_item_delete"
           android:icon="@android:drawable/ic_menu_delete"
-          android:showAsAction="ifRoom|withText"
+          app:showAsAction="ifRoom|withText"
           android:title="@string/deleteAccount"
           android:titleCondensed="@string/deleteAccount" />
 </menu>

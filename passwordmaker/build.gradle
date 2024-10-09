@@ -47,11 +47,11 @@ def generateVersionCode = { ->
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdk 30
     defaultConfig {
         applicationId "org.passwordmaker.android"
-        minSdkVersion 15 //2018-12-08: 99% of android users are using Sdk Version 15+.  Too lazy to deal with upgrading anyways.
-        targetSdkVersion 28
+        minSdkVersion 23
+        targetSdkVersion 30
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         versionCode generateVersionCode()
         versionName generateVersionName()
@@ -73,7 +73,7 @@ android {
                 keyAlias env['PASSWORDMAKER_KEYSTORE_KEY_ALIAS']
                 keyPassword env['PASSWORDMAKER_KEYSTORE_KEY_PASSWORD']
                 println ("Using keystore file: ${file(env['PASSWORDMAKER_KEYSTORE_FILE'])}")
-            } else {
+            } else if (!properties.containsKey("disableSign")) {
                 println ("##################")
                 println ("No keystore for release set.")
                 println ("Set PASSWORDMAKER_KEYSTORE_FILE, PASSWORDMAKER_KEYSTORE_PASSWORD,"
